@@ -22,25 +22,57 @@
         color: #000;
       }
 
+      body {
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
 
+      .calculator {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 200px;
+        text-align: right;
+        margin: 20px;
+        background-color: white;
+      }
+
+      .button {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        text-align: center;
+        line-height: 50px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #ddd;
+      }
     </style>
   </head>
 
   <body class="dark:text-white light:text-black">
     <div class="calculator">
-      <div class="but">1</div>
-      <div class="but">2</div>
-      <div class="but">3</div>
-      <div class="but">4</div>
-      <div class="but">5</div>
-      <div class="but">6</div>
-      <div class="but">7</div>
-      <div class="but">8</div>
-      <div class="but">9</div>
-      <div class="but">0</div>
-      <div class="but">+</div>
-      <div class="but">-</div>
-      <div class="but">=</div>
+      <div id="display" style="padding: 10px">0</div>
+      <div class="button">7</div>
+      <div class="button">8</div>
+      <div class="button">9</div>
+      <div class="button">4</div>
+      <div class="button">5</div>
+      <div class="button">6</div>
+      <div class="button">1</div>
+      <div class="button">2</div>
+      <div class="button">3</div>
+      <div class="button">0</div>
+      <div class="button">+</div>
+      <div class="button">-</div>
+      <div class="button">=</div>
     </div>
 
     <!-- your app code goes here -->
