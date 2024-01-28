@@ -22,7 +22,7 @@ function handleButtonClick(event) {
       display.innerText = "0";
     } else if (buttonValue === "1/x") {
       // Clear the current input and set display to "0"
-      currentInput += "/";
+      currentInput += "1/";
     } else if (buttonValue === "delete") {
       currentInput = currentInput.slice(0, -1);
       display.innerText = currentInput;
@@ -65,12 +65,15 @@ function handleButtonClick(event) {
     } else if (buttonValue === "π") {
       currentInput += "3.14";
       display.innerText = currentInput;
-    } else if (buttonValue === "π") {
+    } else if (buttonValue === "e") {
       currentInput += "2.71828";
       display.innerText = currentInput;
     } else if (buttonValue === "10^x") {
       // Clear the current input and set display to "0"
-      currentInput += "10^";
+      currentInput += "10**";
+    } else if (buttonValue === "x^y") {
+      // Clear the current input and set display to "0"
+      currentInput += "x**";
     } else {
       currentInput += buttonValue;
       display.innerText = currentInput;
