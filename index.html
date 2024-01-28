@@ -3,78 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MTW App Template</title>
-    <!--
-        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
-        Read more here: https://tailwindcss.com/docs/installation 
-    -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- example for dark theme styling when using tailwind cdn -->
+    <script src="script.js" defer></script>
     <style>
-      /*examples for dark/light themes*/
-      .dark .dark\:text-white {
-        color: #fff;
-      }
-      .dark .dark\:bg-gray-800 {
-        background-color: #1f2937;
-      }
-      .light .light\:text-black {
-        color: #000;
-      }
-
       body {
+        font-family: Arial, sans-serif;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         height: 100vh;
+        margin: 0;
       }
 
       .calculator {
-        border: 2px solid #ccc;
-        width: 200px;
+        width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .display {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
         text-align: right;
-        margin: 20px;
-        background-color: white;
+        overflow: hidden;
       }
 
-      .button {
-        width: 50px;
-        height: 50px;
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-        font-size: 18px;
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 1em;
         cursor: pointer;
-      }
-
-      .button:hover {
-        background-color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
       }
     </style>
+    <title>Calculator</title>
   </head>
-
-  <body class="dark:text-white light:text-black">
+  <body>
     <div class="calculator">
-      <div id="display" style="padding: 10px">0</div>
-      <div class="button">7</div>
-      <div class="button">8</div>
-      <div class="button">9</div>
-      <div class="button">4</div>
-      <div class="button">5</div>
-      <div class="button">6</div>
-      <div class="button">1</div>
-      <div class="button">2</div>
-      <div class="button">3</div>
-      <div class="button">0</div>
-      <div class="button">+</div>
-      <div class="button">-</div>
-      <div class="button">=</div>
+      <div class="display" id="display">0</div>
+      <div class="buttons">
+        <!-- Add your buttons here -->
+        <button>MC</button>
+        <button>MR</button>
+        <button>M+</button>
+        <button>M-</button>
+        <button>MS</button>
+        <button>M</button>
+        <button>2nd</button>
+        <button>π</button>
+        <button>e</button>
+        <button>C</button>
+        <button>delete</button>
+        <button>x²</button>
+        <button>1/x</button>
+        <button>|x|</button>
+        <button>exp</button>
+        <button>mod</button>
+        <button>sqrt²(x)</button>
+        <button>(</button>
+        <button>)</button>
+        <button>n!</button>
+        <button>/</button>
+        <button>x^y</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>*</button>
+        <button>10^x</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>-</button>
+        <button>log</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+        <button>±</button>
+        <button>0</button>
+        <button>.</button>
+        <button>=</button>
+      </div>
     </div>
+  </body>
+</html>
 
-    <!-- your app code goes here -->
+<!-- your app code goes here -->
 
-    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
-    <!-- <script>
+<!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+<!-- <script>
         // custom config for the MTW app 
         const mtwAppConfig = {
             border: true // app border in the MTW page                    
@@ -99,6 +126,4 @@
         })
 
     </script> -->
-    <!-- <script src="https://morethanwallet.com/appstore/index.js"></script> -->
-  </body>
-</html>
+<!-- <script src="https://morethanwallet.com/appstore/index.js"></script> -->
