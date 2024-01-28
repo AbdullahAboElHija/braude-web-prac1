@@ -41,6 +41,7 @@ function handleButtonClick(event) {
         const result = Math.sqrt(eval(currentInput));
         display.innerText = result;
         currentInput = result.toString();
+        display.innerText = currentInput;
       } catch (error) {
         display.innerText = "Error";
       }
@@ -71,12 +72,36 @@ function handleButtonClick(event) {
     } else if (buttonValue === "10^x") {
       // Clear the current input and set display to "0"
       currentInput += "10**";
+      display.innerText = currentInput;
     } else if (buttonValue === "x^y") {
       // Clear the current input and set display to "0"
-      currentInput += "x**";
+      currentInput += "**";
+      display.innerText = currentInput;
+    } else if (buttonValue === "n!") {
+      // Clear the current input and set display to "0"
+      currentInput += "!";
+
+      display.innerText = factorialFromStringRecursive(currentInput);
     } else {
       currentInput += buttonValue;
       display.innerText = currentInput;
     }
   }
+}
+
+function factorialFromStringRecursive(factorialString) {
+  const num = parseInt(factorialString, 10);
+
+  if (isNaN(num)) {
+    console.log(
+      "Invalid input. Please provide a valid number in string format."
+    );
+    return;
+  }
+
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+
+  return num * factorialFromStringRecursive((num - 1).toString());
 }
